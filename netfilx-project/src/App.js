@@ -1,5 +1,10 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Movies from "./pages/Movies";
+import MovieDetail from "./pages/MovieDetail";
+
 //1. 3개페이지 필요. 홈페이지, movie페이지, movieDetail페이지
 //2. 유저는 홈페이지에서 배너를 볼 수 있다
 //3. 유저는 3가지 섹션의 영화를 볼수 있다 (가장 인기있는 영화 리스트, 가장 평점 좋은 영화 리스트, 상영 예정작 리스트)
@@ -17,7 +22,15 @@ import "./App.css";
 //13. 유저는 장르별로 영화를 필터링 할 수 있다.
 //14. 유저는 영화 날짜별로 필터링 할 수 있다.
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/:id" element={<MovieDetail />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
