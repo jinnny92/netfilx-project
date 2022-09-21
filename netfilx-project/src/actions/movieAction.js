@@ -23,9 +23,12 @@ function getMovies() {
    let [popularMovies, topRatedMovies, upComingMovies] =await Promise.all([
     popularMovieApi,topRatedApi,upComingApi]);
    //동시에 api를 진행시키지만 이 데이터들이 올때까지 딱 한 번만 기다리기 위해 awiat은 한번만 쓴다.
-  console.log(popularMovies);
-  console.log(topRatedMovies);
-  console.log(upComingMovies);
+   dispatch({
+    type:"GET_MOVIES_SUCCESS",
+    payload : {popularMovies:popularMovies.data, 
+    topRatedMovies:topRatedMovies.data,
+    upComingMovies:upComingMovies.data}
+  })
   };
 }
 

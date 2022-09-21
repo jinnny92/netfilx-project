@@ -7,6 +7,8 @@ const Home = () => {
   useEffect(() => {
     dispatch(movieAction.getMovies());
   }, []);
+ 
+
   return <div>Home</div>;
 };
 
