@@ -7,3 +7,25 @@
 .nav-item:hover {
   color: red;
 }
+
+.banner{
+  height: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.banner::before{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  content: '';
+  background: linear-gradient(to right, black, transparent);
+
+}
+
+.banner-info{
+  width: 40%;
+  margin: 30px;
+  z-index: 1;
+}
